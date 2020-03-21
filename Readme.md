@@ -2,7 +2,7 @@
 
 it's some data struct using golang
 
-- [ ] Linked list
+- [x] Linked list
 - [ ] Binary tree
 - [ ] Stack
 - [ ] Queue
