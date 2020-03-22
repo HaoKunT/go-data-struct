@@ -1,0 +1,19 @@
+language: go
+go:
+  - 1.12.x
+  - 1.13.x
+  - 1.14.x
+  - master
+notifications:
+  email:
+    recipients:
+      - 1151510533@qq.com
+    on_success: always
+script:
+  - go test -v ./...
+  - go build
+env:
+  - GO111MODULE=on
+branches:
+  only:
+    - master

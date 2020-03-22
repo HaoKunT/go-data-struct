@@ -2,8 +2,8 @@
 
 it's some data struct using golang
 
-- [ ] Linked list
-- [ ] Binary tree
+- [x] Linked list
+- [x] Binary tree
 - [ ] Stack
 - [ ] Queue
 - [ ] Heap
