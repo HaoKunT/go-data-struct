@@ -3,7 +3,7 @@
 it's some data struct using golang
 
 - [x] Linked list
-- [ ] Binary tree
+- [x] Binary tree
 - [ ] Stack
 - [ ] Queue
 - [ ] Heap
