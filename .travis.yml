@@ -9,8 +9,11 @@ notifications:
     recipients:
       - 1151510533@qq.com
     on_success: always
+
+brfore_install:
+  - go get github.com/mattn/goveralls
 script:
-  - go test -v -cover ./...
+  - $GOPATH/bin/goveralls -service=travis-ci -v
   - go build
 env:
   - GO111MODULE=on

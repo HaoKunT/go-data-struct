@@ -32,6 +32,10 @@ func TestStackPush(t *testing.T) {
 func TestStackPop(t *testing.T) {
 	var stack = NewStack()
 
+	if pop := stack.Pop(); pop != nil {
+		t.Errorf("Stack: Pop error: it should be nil, but get %v", pop)
+	}
+
 	stack.Push(1)
 	stack.Push(2)
 	stack.Push(3)
@@ -47,6 +51,10 @@ func TestStackPop(t *testing.T) {
 func TestStackGetTop(t *testing.T) {
 	var stack = NewStack()
 
+	if top := stack.GetTop(); top != nil {
+		t.Errorf("Stack: GetTop error: it should be nil, but get %v", top)
+	}
+
 	stack.Push(1)
 	stack.Push(2)
 	stack.Push(3)
@@ -55,6 +63,6 @@ func TestStackGetTop(t *testing.T) {
 		t.Errorf("Stack: GetTop error: the node should be %d, but is %d", 3, top)
 	}
 	if stack.GetLength() != 3 {
-		t.Errorf("Stack: Pop error: the stack length should be %d, but is %d", 3, stack.GetLength())
+		t.Errorf("Stack: GetTop error: the stack length should be %d, but is %d", 3, stack.GetLength())
 	}
 }
