@@ -1,4 +1,4 @@
-package dataStruct
+package datastruct
 
 type LinkedList struct {
 	Head   *ListNode
@@ -25,5 +25,9 @@ type BinaryTreeErrorHandleFunc func(err error)
 
 // Stack is a linked list
 type Stack struct {
+	*LinkedList
+}
+
+type Queue struct {
 	*LinkedList
 }

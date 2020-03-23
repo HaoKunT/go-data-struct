@@ -1,4 +1,4 @@
-package dataStruct
+package datastruct
 
 func NewStack() *Stack {
 	s := new(Stack)
@@ -7,7 +7,7 @@ func NewStack() *Stack {
 	return s
 }
 
-func (s *Stack) Destroy() {
+func (s *Stack) Clear() {
 	s.Head = nil
 	s.length = 0
 }

@@ -1,4 +1,4 @@
-package dataStruct
+package datastruct
 
 import (
 	"bytes"
@@ -93,8 +93,16 @@ func TestBinaryTreeLeft(t *testing.T) {
 	t1.InsertLeftChild(t2)
 	t2.InsertLeftChild(t3)
 
-	if t1.Left().Root != t2.Root && t2.Left().Root != t3.Root {
+	if t1.Left().Root != t2.Root || t2.Left().Root != t3.Root {
 		t.Errorf("BinaryTree: Left error, it should be \" t1.Left().Root == t2.Root && t2.Left().Root == t3.Root\"")
+	}
+
+	if t1.LeftNode() != t2.Root || t2.LeftNode() != t3.Root {
+		t.Errorf("BinaryTree: LeftNode error, it should be t1.LeftNode() != t2.Root || t2.LeftNode() != t3.Root")
+	}
+
+	if t1.DeleteLeft(); t1.LeftNode() != nil {
+		t.Errorf("BinaryTree: DeleteLeft error, it should be nil but get %v", t1.LeftNode())
 	}
 }
 
@@ -120,8 +128,16 @@ func TestBinaryTreeRight(t *testing.T) {
 	t1.InsertRightChild(t2)
 	t2.InsertRightChild(t3)
 
-	if t1.Right().Root != t2.Root && t2.Right().Root != t3.Root {
+	if t1.Right().Root != t2.Root || t2.Right().Root != t3.Root {
 		t.Errorf("BinaryTree: Right error, it should be \" t1.Right().Root == t2.Root && t2.Right().Root == t3.Root\"")
+	}
+
+	if t1.RightNode() != t2.Root || t2.RightNode() != t3.Root {
+		t.Errorf("BinaryTree: RightNode error, it should be t1.RightNode() != t2.Root || t2.RightNode() != t3.Root")
+	}
+
+	if t1.DeleteRight(); t1.RightNode() != nil {
+		t.Errorf("BinaryTree: DeleteRight error, it should be nil but get %v", t1.RightNode())
 	}
 }
 
