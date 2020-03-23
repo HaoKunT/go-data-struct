@@ -8,7 +8,7 @@ func NewQueue() *Queue {
 }
 
 func (q *Queue) IsEmpty() bool {
-	if q.length == 0 && q.LinkedList == nil {
+	if q.length == 0 && q.Head == nil {
 		return true
 	}
 	return false

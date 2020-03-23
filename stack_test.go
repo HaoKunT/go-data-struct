@@ -66,3 +66,14 @@ func TestStackGetTop(t *testing.T) {
 		t.Errorf("Stack: GetTop error: the stack length should be %d, but is %d", 3, stack.GetLength())
 	}
 }
+
+func TestStackClear(t *testing.T) {
+	var stack = NewStack()
+	stack.Push(1)
+	stack.Push(2)
+	stack.Push(3)
+
+	if stack.Clear(); stack.Head != nil || stack.GetLength() != 0 {
+		t.Errorf("Stack: Clear error: the stack length should be 0 and the head should be nil but is %d and is %v", stack.GetLength(), stack.Head)
+	}
+}

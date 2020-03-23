@@ -134,9 +134,10 @@ func (ll *LinkedList) GetLength() int {
 	return ll.length
 }
 
-func (ll *LinkedList) Destroy() {
+func (ll *LinkedList) Clear() {
 	// use simple method
-	ll = nil
+	ll.Head = nil
+	ll.length = 0
 }
 
 func NewListNode(value interface{}) *ListNode {
