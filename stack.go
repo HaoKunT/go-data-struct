@@ -1,4 +1,4 @@
-package dataStruct
+package datastruct
 
 func NewStack() *Stack {
 	s := new(Stack)

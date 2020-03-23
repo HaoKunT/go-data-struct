@@ -1,4 +1,4 @@
-package dataStruct
+package datastruct
 
 func NewQueue() *Queue {
 	q := new(Queue)
