@@ -130,6 +130,10 @@ func (ll *LinkedList) GetFirst(value interface{}) (int, *ListNode) {
 	return -1, nil
 }
 
+func (ll *LinkedList) GetLength() int {
+	return ll.length
+}
+
 func (ll *LinkedList) Destroy() {
 	// use simple method
 	ll = nil

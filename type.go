@@ -22,3 +22,8 @@ type BinaryTreeNode struct {
 
 type BinaryTreeHandleFunc func(node *BinaryTreeNode) error
 type BinaryTreeErrorHandleFunc func(err error)
+
+// Stack is a linked list
+type Stack struct {
+	*LinkedList
+}
