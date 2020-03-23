@@ -10,7 +10,7 @@ notifications:
       - 1151510533@qq.com
     on_success: always
 script:
-  - go test -v ./...
+  - go test -v -cover ./...
   - go build
 env:
   - GO111MODULE=on
