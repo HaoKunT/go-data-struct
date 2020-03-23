@@ -48,8 +48,8 @@ func (ll *LinkedList) Insert(node *ListNode) {
 }
 
 func (ll *LinkedList) InsertAt(node *ListNode, index int) error {
-	if index < 0 || index >= ll.length {
-		return fmt.Errorf("index out of range: [0, %d), get %d", ll.length, index)
+	if index < 0 || index > ll.length {
+		return fmt.Errorf("index out of range: [0, %d], get %d", ll.length, index)
 	}
 	tmpNode := ll.Head
 	// if index == 0, it equals Insert

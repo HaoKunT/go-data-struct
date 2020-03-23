@@ -27,3 +27,7 @@ type BinaryTreeErrorHandleFunc func(err error)
 type Stack struct {
 	*LinkedList
 }
+
+type Queue struct {
+	*LinkedList
+}
