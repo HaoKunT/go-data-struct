@@ -31,3 +31,15 @@ type Stack struct {
 type Queue struct {
 	*LinkedList
 }
+
+//Heap is a list which implements heap interface, we use ismax to indicate whether the heap is a max heap or min heap
+type Heap struct {
+	*LinkedList
+	ismax bool //true for max heap, false for min heap
+}
+
+//HeapNode is a node in Heap
+type HeapNode struct {
+	Value    interface{}
+	Priority int
+}

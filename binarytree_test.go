@@ -236,3 +236,25 @@ func TestBinaryTreeDeep(t *testing.T) {
 		t.Errorf("BinaryTree: Deep error: it should be 3 but get %d", tree.Deep())
 	}
 }
+
+//TestBinaryTreePreOrderTraverseStack
+func TestBinaryTreePreOrderTraverseStack(t *testing.T) {
+	tree := NewBinaryTreeFromNode(NewBinaryTreeNode(1))
+	tree.Root.Left = NewBinaryTreeNode(2)
+	tree.Root.Right = NewBinaryTreeNode(3)
+	tree.Root.Left.Left = NewBinaryTreeNode(4)
+	tree.Root.Left.Right = NewBinaryTreeNode(5)
+
+	var buf bytes.Buffer
+
+	tree.PreOrderTraverseStack(func(node *BinaryTreeNode) error {
+		buf.WriteString(node.String())
+		return nil
+	}, func(err error) {
+		t.Error(err)
+	})
+
+	if buf.String() != "12453" {
+		t.Errorf("BinaryTree: TestBinaryTreePreOrderTraverseStack error: buf.String() should be '12453' but is '%s'", buf.String())
+	}
+}
