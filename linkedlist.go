@@ -68,6 +68,18 @@ func (ll *LinkedList) InsertAt(node *ListNode, index int) error {
 	return nil
 }
 
+//Pop will return the first node and delete it from the list
+func (ll *LinkedList) Pop() (*ListNode, error) {
+	if ll.length == 0 {
+		return nil, errors.New("No Node")
+	}
+	tmpNode := ll.Head
+	ll.Head = ll.Head.Next
+	tmpNode.Next = nil
+	ll.length--
+	return tmpNode, nil
+}
+
 func (ll *LinkedList) String() string {
 	buf := bytes.NewBuffer([]byte{})
 	tmpNode := ll.Head

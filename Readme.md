@@ -7,5 +7,5 @@ it's some data struct using golang
 - [x] Binary tree
 - [x] Stack
 - [x] Queue
-- [ ] Heap
+- [x] Heap
 - [ ] B/B+ tree

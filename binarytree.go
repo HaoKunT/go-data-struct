@@ -65,10 +65,27 @@ func (bt *BinaryTree) PreOrderTraverseRecursive(f BinaryTreeHandleFunc, e Binary
 	r.PreOrderTraverseRecursive(f, e)
 }
 
-// func (bt *BinaryTree) PreOrderTraverseStack(f BinaryTreeHandleFunc, e BinaryTreeErrorHandleFunc) {
-// 	// now we do not have stack data struct
-// 	panic("Sorry we do not have stack now")
-// }
+//PreOrderTraverseStack is a stack based pre-order traversal
+func (bt *BinaryTree) PreOrderTraverseStack(f BinaryTreeHandleFunc, e BinaryTreeErrorHandleFunc) {
+	//now we use a stack to do the traversal
+	var s = make([]*BinaryTreeNode, 0)
+	s = append(s, bt.Root)
+	for len(s) > 0 {
+		h := s[len(s)-1]
+		s = s[:len(s)-1]
+		err := f(h)
+		if err != nil {
+			e(err)
+		}
+		if h.Right != nil {
+			s = append(s, h.Right)
+		}
+		if h.Left != nil {
+			s = append(s, h.Left)
+		}
+	}
+
+}
 
 func (bt *BinaryTree) InOrderTraverseRecursive(f BinaryTreeHandleFunc, e BinaryTreeErrorHandleFunc) {
 	tNode := bt.Root

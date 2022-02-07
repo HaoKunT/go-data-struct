@@ -111,6 +111,34 @@ func TestLinkedListIndex(t *testing.T) {
 	}
 }
 
+//TestLinkedListPop
+func TestLinkedListPop(t *testing.T) {
+	var node1 = &ListNode{
+		Next:  nil,
+		Value: 1,
+	}
+	var node2 = &ListNode{
+		Next:  node1,
+		Value: 2,
+	}
+	var node3 = &ListNode{
+		Next:  node2,
+		Value: 3,
+	}
+	ll := NewLinkedList()
+	ll.Insert(node1)
+	ll.Insert(node2)
+	ll.Insert(node3)
+
+	tNode, err := ll.Pop()
+	if err != nil {
+		t.Errorf("LinkedList: Pop error: %s", err)
+	}
+	if tNode != node3 {
+		t.Errorf("LinkedList: Pop error: it should be node3 but get %v", tNode)
+	}
+}
+
 func TestLinkedListDeleteByIndex(t *testing.T) {
 	var node1 = &ListNode{
 		Next:  nil,
