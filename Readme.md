@@ -9,3 +9,4 @@ it's some data struct using golang
 - [x] Queue
 - [x] Heap
 - [ ] B/B+ tree
+- [x] Graph
