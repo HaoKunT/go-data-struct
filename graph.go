@@ -63,3 +63,38 @@ func (g *Graph) AddEdge(edge *Edge) error {
 	g.edges = append(g.edges, edge)
 	return nil
 }
+
+// GetVertex returns a vertex by name
+func (g *Graph) GetVertex(name string) *Vertex {
+	return g.verties[name]
+}
+
+// GetEdge returns an edge by from and to
+func (g *Graph) GetEdge(from, to string) *Edge {
+	for _, e := range g.edges {
+		if e.From == from && e.To == to {
+			return e
+		}
+	}
+	return nil
+}
+
+// GetEdges returns all edges from a vertex
+func (g *Graph) GetEdges(from string) []*Edge {
+	edges := make([]*Edge, 0)
+	for _, e := range g.edges {
+		if e.From == from {
+			edges = append(edges, e)
+		}
+	}
+	return edges
+}
+
+// GetVerties returns all verties in the graph
+func (g *Graph) GetVerties() []*Vertex {
+	vs := make([]*Vertex, 0)
+	for _, v := range g.verties {
+		vs = append(vs, v)
+	}
+	return vs
+}
